@@ -1,6 +1,6 @@
 package com.stripe.android.cards
 
-internal sealed class Cvc {
+sealed class Cvc {
 
     /**
      * A representation of a partial or full CVC that hasn't been validated.
@@ -27,7 +27,7 @@ internal sealed class Cvc {
     /**
      * A representation of a client-side validated CVC.
      */
-    internal data class Validated internal constructor(
+    data class Validated internal constructor(
         internal val value: String
     ) : Cvc()
 

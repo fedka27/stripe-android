@@ -92,7 +92,7 @@ class CardNumberEditText internal constructor(
         }
 
     @JvmSynthetic
-    internal var brandChangeCallback: (CardBrand) -> Unit = {}
+    var brandChangeCallback: (CardBrand) -> Unit = {}
         set(callback) {
             field = callback
 
@@ -103,7 +103,7 @@ class CardNumberEditText internal constructor(
 
     // invoked when a valid card has been entered
     @JvmSynthetic
-    internal var completionCallback: () -> Unit = {}
+    var completionCallback: () -> Unit = {}
 
     internal val panLength: Int
         get() = accountRangeService.accountRange?.panLength
@@ -119,7 +119,7 @@ class CardNumberEditText internal constructor(
     var isCardNumberValid: Boolean = false
         private set
 
-    internal val validatedCardNumber: CardNumber.Validated?
+    val validatedCardNumber: CardNumber.Validated?
         get() = unvalidatedCardNumber.validate(panLength)
 
     private val unvalidatedCardNumber: CardNumber.Unvalidated
